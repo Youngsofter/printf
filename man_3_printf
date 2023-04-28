@@ -1,0 +1,76 @@
+.TH man 3 "30 Jul 2019" "0.10" "_printf man page"
+.SH NAME
+_printf \- format and print data
+.SH SYNOPSIS
+.nf
+.B #include "main.h"
+.PP
+.BI "int _printf(const char *format, ...);"
+.BI "int _putchar(char c);"
+.BI "void buffer(char *s, char x, int *index);"
+.BI "int print_c(va_list a, char *s, int *index)"
+.BI "int print_s(va_list a, char *s, int *index);"
+.BI "int print_por(va_list a, char *s, int *index);"
+.BI "int print_id(va_list a, char *s, int *index);"
+.BI "int print_bin(va_list a, char *s, int *index);"
+.BI "int print_u(va_list a, char *s, int *index);"
+.BI "int print_o(va_list a, char *s, int *index);"
+.BI "int print_x(va_list a, char *s, int *index);"
+.BI "int print_X(va_list a, char *s, int *index);"
+.BI "int print_S(va_list a, char *s, int *index);"
+.BI "int switch_H(int sum, int *h, int y);"
+.BI "int print_R(va_list a, char *s, int *index);"
+.BI "int print_r(va_list a, char *s, int *index);"
+.BI "int print_p(va_list a, char *s, int *index);"
+.SH DESCRIPTION
+.PP
+Print ARGUMENTS depends off their format. To use this function it has to be include the header file "main.h".
+.SH RETURN VALUE
+For successful return, this functions returns the number of characters
+printed (excluding the null byte used to end output to strings).
+.SH ARGUMENTS
+.TP
+%c
+Prints characters.
+.TP
+%s %S
+Prints strings.
+.TP
+%d
+Prints decimal (Base10)  numbers.
+.TP
+%i
+Prints integer numebrs.
+.TP
+%b
+The unsigned int argument is converted to binary.
+.TP
+%u
+Prints an unsigned decimal (base10) number.
+.TP
+%o
+Prints a number in octal (base8).
+.TP
+%x %X
+Prints a number in hexadecimal(base16) (%X for Uppercase format).
+.TP
+%p
+Prints the address of a variable.
+.TP
+%l
+Expects the function to print a long int sized integer argument.
+.TP
+%h
+Expects the function to print an int sized integer argument which was promoted from a short. 
+.TP
+%r
+Prints the reversed string.
+.TP
+%R
+Prints the rot13'ed string.
+.SH EXAMPLE
+_printf("To print the string %s, printing char %c or printing number %d\\n", "Abcde", 'A', 10);
+.SH SEE ALSO
+.I printf(3)
+.SH AUTHOR
+Jorge Zafra, Carlos Molano.
